@@ -16,8 +16,13 @@ public class MedicineController {
     public Medicine updateMedicine(@PathVariable int medicineId,@RequestBody Medicine updateMedicine){
         if(medicineMap.containsKey(medicineId)){
             Medicine existingMedicine=medicineMap.get(medicineId);
-            existingMedicine.setMedicineName(updated)
+            existingMedicine.setMedicineName(updatedMedicine.getMedicineName());
+            existingMedicine.setPrice(updatedMedicine.getPrice());
+            existingMedicine.setQuantity(updatedMedicine.getQuantity());
+            existingMedicine.setDescription(updatedMedicine.getDescription());
+            return existingMedicine;
         }
+        return null;
     }
     
 }
