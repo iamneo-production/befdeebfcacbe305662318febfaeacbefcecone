@@ -3,6 +3,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+@RestController
+@RequestMapping("/medicine")
 public class MedicineController {
     private Map<Integer, Medicine> medicineMap=new HashMap<>();
     private int currentId=1;
@@ -12,7 +14,7 @@ public class MedicineController {
         medicineMap.put(medicine.getMedicineId(),medicine);
         return true;
     }
-    @PutMapping
+    @PutMapping("/{medicineId}")
     public Medicine updateMedicine(@PathVariable int medicineId,@RequestBody Medicine updateMedicine){
         if(medicineMap.containsKey(medicineId)){
             Medicine existingMedicine=medicineMap.get(medicineId);
