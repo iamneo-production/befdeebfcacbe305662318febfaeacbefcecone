@@ -3,6 +3,6 @@ public class Medicine {
     private String medicineName;
     private float price;
     private int quantity;
-    
+    private String description;
     
 }
